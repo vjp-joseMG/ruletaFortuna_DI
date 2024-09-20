@@ -42,13 +42,21 @@ public class ruletaPep {
         char pedirConsonante /*= entrada.next().charAt(0)*/;
         String fraseMostrada = fraseOculta(fraseElegida);
         
-
+        boolean seguir = true;
         do{
+            String fraseAux = fraseMostrada;
+
             pedirConsonante = entrada.next().charAt(0);
             fraseMostrada = revelarLetras(fraseMostrada, fraseElegida, pedirConsonante);
+            
+            if (fraseMostrada.equalsIgnoreCase(fraseAux)) {
+                seguir = false;
+            }
 
             
-        }while();
+
+
+        }while(seguir);
 
 
         Councursante jugadorUno = new Councursante();
