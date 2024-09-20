@@ -29,7 +29,7 @@ public class ruletaPep {
                 fraseAux[i] = letra;
             }
         }
-        System.out.println(fraseOculta);
+        System.out.println(fraseAux);
         return fraseAux.toString();
     }
 
@@ -39,10 +39,16 @@ public class ruletaPep {
         String fraseElegida = FRASES_A_ADIVINAR[numAleatorio(0, FRASES_A_ADIVINAR.length)];
         Scanner entrada = new Scanner(System.in);
 
-        char pedirConsonante = entrada.next().charAt(0);
+        char pedirConsonante /*= entrada.next().charAt(0)*/;
         String fraseMostrada = fraseOculta(fraseElegida);
         
 
+        do{
+            pedirConsonante = entrada.next().charAt(0);
+            fraseMostrada = revelarLetras(fraseMostrada, fraseElegida, pedirConsonante);
+
+            
+        }while();
 
 
         Councursante jugadorUno = new Councursante();
